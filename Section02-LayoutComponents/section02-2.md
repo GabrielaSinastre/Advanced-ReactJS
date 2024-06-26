@@ -12,16 +12,19 @@
   
     Exemplo Tradicional (Acoplado)
     
-    ```<NavBar style={...}>
+    ```
+    <NavBar style={...}>
       <h3> Component code... </h3>
-    </NavBar>```
+    </NavBar>
+    ```
     In this example, the NavBar component contains a title (<h3>). If NavBar also includes specific styles for positioning, width, height, etc., it is coupling layout logic and content.
 
     Separando Layout e Conteúdo
-    
-    ```<LayoutComponent style={...}>
+    ```
+    <LayoutComponent style={...}>
       <SideNavBar />
-    </LayoutComponet>```
+    </LayoutComponet>
+    ```
     - In this example, we have:
     LayoutComponent: This is the component dedicated to managing layout. It can define styles such as display, flex, grid, position, etc., which determine how child components are arranged on the screen.
     - SideNavBar: This component is responsible only for the logic and presentation of the side navigation content. It does not concern itself with where or how it is positioned on the page, as this responsibility belongs to the LayoutComponent.
