@@ -20,6 +20,6 @@
   -> Despite the abundance of articles on the topic, handling forms can still be challenging
   -> Dive into best practices for managing form, mistakes, validation and submission in React.
 
-- Incorporat concepts from functional programming into our React applications.
+- Incorporate concepts from functional programming into our React applications.
  -> Can enhance code, organization and maintainability.
  -> How functional programming concepts like Recursive can be integrated seamlessly into React development.

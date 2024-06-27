@@ -20,3 +20,12 @@ This repository contains summaries of the [Advanced React](https://www.udemy.com
   - [DataSource Component](Section03-ContainerComponents/section03-6.md)
   - [Container Component with Render Props Pattern](Section03-ContainerComponents/section03-7.md)
   - [Local Storage Data Loader Component](Section03-ContainerComponents/section03-8.md)
+- [Design Patterns: Controlled and Uncontrolled Components](Section04-ControlledAndUncontrolledComponents)
+  - [Introduction](Section04-ControlledAndUncontrolledComponents/section04-1.md)
+  - [Uncontrolled Components](Section04-ControlledAndUncontrolledComponents/section04-2.md)
+  - [Controlled Components](Section04-ControlledAndUncontrolledComponents/section04-3.md)
+  - [Controlled Modals](Section04-ControlledAndUncontrolledComponents/section04-4.md)
+  - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-5.md)
+  - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-6.md)
+  - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-7.md)
+Section04-ControlledAndUncontrolledComponents
