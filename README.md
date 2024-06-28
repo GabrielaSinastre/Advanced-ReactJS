@@ -26,6 +26,5 @@ This repository contains summaries of the [Advanced React](https://www.udemy.com
   - [Controlled Components](Section04-ControlledAndUncontrolledComponents/section04-3.md)
   - [Controlled Modals](Section04-ControlledAndUncontrolledComponents/section04-4.md)
   - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-5.md)
-  - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-6.md)
-  - [Uncontrolled Flows](Section04-ControlledAndUncontrolledComponents/section04-7.md)
-Section04-ControlledAndUncontrolledComponents
+  - [Collecting Data](Section04-ControlledAndUncontrolledComponents/section04-6.md)
+  - [Controlled Flows](Section04-ControlledAndUncontrolledComponents/section04-7.md)

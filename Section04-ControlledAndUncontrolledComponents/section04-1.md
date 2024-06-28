@@ -6,7 +6,7 @@
 - Uncontrolled components: 
   -> The component itself manages it's own internal state, and the data within the component is tipically accessed only when specific events happen. Common example: is an uncontrolled form where the values of the form inputs are known to the outside components only when the user triggers the submit component.
 
-- Controledd components:
+-  components:
   -> The parent component is responsible for managing the state which is then passed down to the control component.
   -> The parent component handles the state and controls the behavior of the controlled component.
 

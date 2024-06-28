@@ -8,6 +8,7 @@
   -> The getData function will receive te getDataFromLocalStorage with the key (key of something saved on local storage)
   -> The component Message is used to get the value of the key saved on the local storage.
   -> Pass the resource name 'msg'.
+  -> I don't need to create a lot of hooks on the App (parent component), I have created only one reusable function that I passed to the children and they make their own logic data.
 
   ```
   import axios from "axios";

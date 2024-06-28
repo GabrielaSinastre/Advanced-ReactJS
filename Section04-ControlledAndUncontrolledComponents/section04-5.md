@@ -8,66 +8,68 @@
   - First one: data, set data -> the data we are going to collect during the course of the steps.
   - Second one: Keeping track of the current index.
 
+  ```
+  import React, { useState } from "react";
 
-import React, { useState } from "react";
+  export const UncontrolledFlow = ({ children, onDone }) => {
+    const [data, setData] = useState({});
+    const [currentStepIndex, setCurrentStepIndex] = useState(0);
 
-export const UncontrolledFlow = ({ children, onDone }) => {
-  const [data, setData] = useState({});
-  const [currentStepIndex, setCurrentStepIndex] = useState(0);
+    const currentChild = React.Children.toArray(children)[currentStepIndex];
 
-  const currentChild = React.Children.toArray(children)[currentStepIndex];
+    const next = () => {
+      setCurrentStepIndex(currentStepIndex + 1);
+    };
 
-  const next = () => {
-    setCurrentStepIndex(currentStepIndex + 1);
+    if (React.isValidElement(currentChild)) {
+      return React.cloneElement(currentChild, { next });
+    }
+
+    return currentChild;
+  };
+  ```
+  
+  ```
+  import { UncontrolledFlow } from "./components/uncontrolled-flow";
+
+  const StepOne = ({ next }) => {
+    return (
+      <>
+        <h1>Step #1</h1>
+        <button onClick={next}>Next</button>
+      </>
+    );
+  };
+  const StepTwo = ({ next }) => {
+    return (
+      <>
+        <h1>Step #2</h1>
+        <button onClick={next}>Next</button>
+      </>
+    );
+  };
+  const StepThree = ({ next }) => {
+    return (
+      <>
+        <h1>Step #3</h1>
+        <button onClick={next}>Next</button>
+      </>
+    );
   };
 
-  if (React.isValidElement(currentChild)) {
-    return React.cloneElement(currentChild, { next });
+  function App() {
+    return (
+      <>
+        <UncontrolledFlow>
+          <StepOne />
+          <StepTwo />
+          <StepThree />
+        </UncontrolledFlow>
+      </>
+    );
   }
 
-  return currentChild;
-};
-
-
-import { UncontrolledFlow } from "./components/uncontrolled-flow";
-
-const StepOne = ({ next }) => {
-  return (
-    <>
-      <h1>Step #1</h1>
-      <button onClick={next}>Next</button>
-    </>
-  );
-};
-const StepTwo = ({ next }) => {
-  return (
-    <>
-      <h1>Step #2</h1>
-      <button onClick={next}>Next</button>
-    </>
-  );
-};
-const StepThree = ({ next }) => {
-  return (
-    <>
-      <h1>Step #3</h1>
-      <button onClick={next}>Next</button>
-    </>
-  );
-};
-
-function App() {
-  return (
-    <>
-      <UncontrolledFlow>
-        <StepOne />
-        <StepTwo />
-        <StepThree />
-      </UncontrolledFlow>
-    </>
-  );
-}
-
-export default App;
+  export default App;
+  ```
 
 
