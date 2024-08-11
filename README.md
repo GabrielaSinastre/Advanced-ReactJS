@@ -41,3 +41,8 @@ This repository contains summaries of the [Advanced React](https://www.udemy.com
   - [Fetching users with Custom Hook](Section06-CustomHooks/section06-3.md)
   - [Fetching a Resource with Custom Hook](Section06-CustomHooks/section06-4.md)
   - [More Generic Custom Hook](Section06-CustomHooks/section06-5.md)
+- [Functional Programming in React](Section07-FunctionalProgramming)
+  - [Introduction](Section07-FunctionalProgramming/section07-1.md)
+  - [Recursive Components](Section07-FunctionalProgramming/section07-2.md)
+  - [Compositions](Section07-FunctionalProgramming/section07-3.md)
+  - [Partial Components](Section07-FunctionalProgramming/section07-4.md)
