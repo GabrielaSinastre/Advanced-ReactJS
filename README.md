@@ -46,3 +46,6 @@ This repository contains summaries of the [Advanced React](https://www.udemy.com
   - [Recursive Components](Section07-FunctionalProgramming/section07-2.md)
   - [Compositions](Section07-FunctionalProgramming/section07-3.md)
   - [Partial Components](Section07-FunctionalProgramming/section07-4.md)
+- [More Patterns](Section08-MorePatterns)
+  - [Compound Components](Section08-MorePatterns/section08-1.md)
+  - [Observer Pattern](Section08-MorePatterns/section08-2.md)
