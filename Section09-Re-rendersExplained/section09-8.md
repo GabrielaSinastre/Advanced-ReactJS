@@ -129,8 +129,9 @@
     ```
     - When setState is invoked, react knows to re-render the parent. It calls the parent function or the parent functional component and compares the outputs before and after the state change. The result is a locally defined object within the parent function that is recreated each time, leading to an object that is returning false for before and after of the child objects, meaning the child will re-render too, which is now clearly proven for us.
 
-    - Consider what happens if, instead of directly re-rendering the child component, we pass it as a prop at the location where the parent component is rendered, the child definition object is created and passed as a child prop upon state update in the parent
-        ```
+    - Consider what happens if, instead of directly re-rendering the child component, we pass it as a prop at the location where the parent component is rendered, the child definition object is created and passed as a child prop upon state update in the parent.
+    
+    ```
     const Parent = ({ child }) => {
       const [state, setState] = useState();
 
@@ -144,11 +145,10 @@
 
     //When Parrent re-render, child object will not be redefined. Thus:
 
-    
-    
     //        before after
     Object.is(child, child) //True
     ```
+
     - React compares the returned object before and after the state change. Here, the child object created outside the parent function scope and unchanged on calls, which leads to a true comparison results prompting to skip Re-rendering this component. This is exactly what happened in our little app that we saw  in the last in the previous lesson. 
       - So when set position in this component (DynamicScroll), the dynamic scroll triggered and re-render happens. React examine all the returned object definitions which we have this dynamic block the scrollable containeer and the content are passed as props, but it see that the content object remains the same before and after this content object that it renders. It will see that using the object that is will return true for this content and it keeps the re-render of the slow components that are inside this component.
       - However, thee dynamic block inside this scrollable container will re-render because it is directly defined inside this dynamic scroll. So, every time it will be redefined and the comparison for it will return false.
