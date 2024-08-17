@@ -1,0 +1,74 @@
+# Re-renders Explained
+
+## Children props
+- The previous example works but it's a little bit weird and ugly. Let's make this more readable and cleaner.
+
+- There is a special syntax for children props.
+
+  ```
+  import { ReactNode, useState } from "react";
+  import styled from "styled-components";
+
+  const DynamicBlock = styled.div<{ top: number; color: string }>`
+    position: ${(props) => (props.top === 113 ? "fixed" : "absolute")};
+    top: ${(props) => (props.top === 113 ? "0.2rem" : `${props.top}px`)};
+    left: 1rem;
+    background: ${(props) => props.color};
+    width: 3rem;
+    height: 3rem;
+    line-height: 3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  `;
+
+  const ScrollableContainer = styled.div`
+    width: 25rem;
+    height: 12rem;
+    overflow: auto;
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    position: relative;
+    z-index: 1;
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  `;
+
+  const calculatePosition = (scrollValue: number) => 170 - scrollValue / 2;
+
+  const calculateColor = (position: number) => {
+    const normalizedPosition = Math.min(Math.max(position, 0), 255);
+    return `rgb(${normalizedPosition}, ${255 - normalizedPosition}, 150)`;
+  };
+
+  const DynamicScroll = ({ children }: { children: ReactNode }) => {
+    const [position, setPosition] = useState(170);
+
+    const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+      const newPosition = calculatePosition(e.currentTarget.scrollTop);
+      setPosition(Math.max(113, newPosition));
+    };
+
+    const blockColor = calculateColor(position);
+
+    return (
+      <ScrollableContainer onScroll={handleScroll}>
+        <DynamicBlock top={position === 113 ? 113 : position} color={blockColor}>
+          🛒
+        </DynamicBlock>
+        {children}
+      </ScrollableContainer>
+    );
+  };
+
+  export default DynamicScroll;
+  ```
+
+  - This code is cleaner thanks to the special children syntax: when you say children you don't need to say children and pass whatever components you have, you just need to put the components between the opening and the closing tags of the components and all of these are going to be automatically grabbed by react.
+  - With this syntax will have exactly the same performance benefits as passing the elements as a props with the previous syntax, whatever is passed through props won't be affected by the state change of the component that receives those props.
